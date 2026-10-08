@@ -1,0 +1,4 @@
+/* All in One Accessibility - remove the settings this extension stored. */
+DELETE FROM {databaseOwner}[{objectQualifier}PortalSettings]
+WHERE SettingName IN (N'AIOA_ColorCode', N'AIOA_Position', N'AIOA_Token')
+GO

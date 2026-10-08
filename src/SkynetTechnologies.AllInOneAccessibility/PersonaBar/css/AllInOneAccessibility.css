@@ -1,0 +1,519 @@
+/*
+ * All in One Accessibility - DNN Persona Bar settings panel.
+ * Copyright (c) Skynet Technologies USA LLC. Licensed under the MIT License.
+ * Every rule is scoped to .aioa-panel so nothing leaks into the rest of the Persona Bar.
+ */
+
+.aioa-panel {
+    --aioa-purple-dark: #2A0057;
+    --aioa-purple: #420083;
+    --aioa-purple-light: #7C3AED;
+    --aioa-icon-bg: #3c007f;
+    --aioa-selected: #80c944;
+    --aioa-text: #1e1e1e;
+    --aioa-muted: #6f7273;
+    --aioa-border: #c8c8c8;
+}
+
+/* ---------- panel header: logo wordmark (replaces the plain title) ---------- */
+.aioa-header .aioa-title {
+    display: flex;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    line-height: 1;
+}
+
+.aioa-header .aioa-title-wordmark {
+    display: block;
+    width: auto;
+    height: 56px;
+    max-width: 100%;
+    object-fit: contain;
+}
+
+@media (max-width: 640px) {
+    .aioa-header .aioa-title-wordmark {
+        height: 40px;
+    }
+}
+
+.aioa-panel .aioa-settings {
+    max-width: 810px;
+    margin: 0 auto;
+    padding: 24px 0 40px;
+    color: var(--aioa-text);
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.aioa-panel .aioa-settings *,
+.aioa-panel .aioa-settings *::before,
+.aioa-panel .aioa-settings *::after {
+    box-sizing: border-box;
+}
+
+.aioa-panel .aioa-hide,
+.aioa-panel .aioa-settings .aioa-hide {
+    display: none !important;
+}
+
+.aioa-panel .aioa-visually-hidden {
+    position: absolute !important;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+.aioa-panel .aioa-center {
+    text-align: center;
+}
+
+/* ---------- status line ---------- */
+.aioa-panel .aioa-status {
+    margin: 0 0 16px;
+    padding: 10px 14px;
+    border-radius: 6px;
+    background: #f1ecfa;
+    color: var(--aioa-purple);
+}
+
+.aioa-panel .aioa-status.aioa-status-error {
+    background: #fdecee;
+    color: #a4161a;
+}
+
+.aioa-panel .aioa-form.aioa-busy {
+    opacity: .55;
+    pointer-events: none;
+}
+
+/* ---------- free plan banner ---------- */
+.aioa-panel .aioa-free-plan {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(135deg, var(--aioa-purple) 0%, var(--aioa-purple-dark) 100%);
+    border-radius: 16px;
+    padding: 26px 28px;
+    color: #fff;
+    margin-bottom: 28px;
+}
+
+.aioa-panel .aioa-bold-watermark {
+    position: absolute;
+    right: -30px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 220px;
+    height: 220px;
+    opacity: .07;
+    pointer-events: none;
+}
+
+.aioa-panel .aioa-bold-inner {
+    position: relative;
+    z-index: 1;
+}
+
+.aioa-panel .aioa-bold-eyebrow {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    color: #D9C6FF;
+    background: rgba(255, 255, 255, .12);
+    padding: 4px 10px;
+    border-radius: 999px;
+    margin-bottom: 14px;
+}
+
+.aioa-panel .aioa-bold-top {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-bottom: 6px;
+}
+
+.aioa-panel .aioa-bold-left {
+    flex: 1;
+    min-width: 240px;
+}
+
+.aioa-panel .aioa-bold-stat {
+    font-size: 34px;
+    font-weight: 800;
+    line-height: 1;
+    margin-bottom: 8px;
+    color: #fff;
+}
+
+.aioa-panel .aioa-bold-sub {
+    font-size: 14px;
+    color: #E4D6FF;
+    margin: 0;
+    max-width: 480px;
+}
+
+.aioa-panel .aioa-bold-sub strong {
+    color: #fff;
+}
+
+.aioa-panel .aioa-bold-btn,
+.aioa-panel .aioa-bold-btn:visited {
+    flex-shrink: 0;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: #fff;
+    color: var(--aioa-purple);
+    font-weight: 800;
+    font-size: 14.5px;
+    padding: 12px 22px;
+    border-radius: 8px;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: transform .15s ease, box-shadow .15s ease;
+}
+
+.aioa-panel .aioa-bold-btn:hover,
+.aioa-panel .aioa-bold-btn:focus {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, .25);
+    color: var(--aioa-purple);
+}
+
+.aioa-panel .aioa-bold-btn svg {
+    width: 15px;
+    height: 15px;
+}
+
+.aioa-panel .aioa-free-plan small {
+    color: #E4D6FF;
+}
+
+.aioa-panel .aioa-bold-divider {
+    height: 1px;
+    background: rgba(255, 255, 255, .15);
+    margin: 10px 0 14px;
+}
+
+.aioa-panel .aioa-bold-note {
+    color: #C9B8E8;
+    margin: 0;
+    max-width: 560px;
+}
+
+.aioa-panel .aioa-bold-note b {
+    color: #fff;
+}
+
+/* ---------- form basics ---------- */
+.aioa-panel .aioa-field {
+    margin: 0 0 24px;
+    padding: 0;
+    border: 0;
+    min-width: 0;
+}
+
+.aioa-panel .aioa-label,
+.aioa-panel legend.aioa-label {
+    display: block;
+    font-weight: 700;
+    margin: 0 0 8px;
+    padding: 0;
+    font-size: 14px;
+    color: var(--aioa-text);
+}
+
+.aioa-panel .aioa-heading {
+    display: block;
+    font-size: 18px;
+    font-weight: 700;
+    margin: 0 0 10px;
+    padding: 0;
+    color: var(--aioa-text);
+}
+
+.aioa-panel .aioa-help {
+    font-size: 12.5px;
+    color: var(--aioa-muted);
+    margin-top: 6px;
+}
+
+.aioa-panel .aioa-input,
+.aioa-panel .aioa-select {
+    display: block;
+    width: 100%;
+    height: 38px;
+    padding: 6px 12px;
+    font-size: 14px;
+    color: var(--aioa-text);
+    background: #fff;
+    border: 1px solid var(--aioa-border);
+    border-radius: 4px;
+    box-shadow: none;
+}
+
+.aioa-panel .aioa-input:focus,
+.aioa-panel .aioa-select:focus {
+    outline: 2px solid var(--aioa-purple-light);
+    outline-offset: 1px;
+    border-color: var(--aioa-purple-light);
+}
+
+.aioa-panel .aioa-select {
+    width: 150px;
+}
+
+.aioa-panel .aioa-inline {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    margin-bottom: 12px;
+    flex-wrap: wrap;
+}
+
+.aioa-panel .aioa-input-group {
+    display: inline-flex;
+    align-items: stretch;
+    width: 160px;
+}
+
+.aioa-panel .aioa-input-group .aioa-input {
+    border-radius: 4px 0 0 4px;
+    border-right: 0;
+    -moz-appearance: textfield;
+}
+
+.aioa-panel .aioa-input-group .aioa-input::-webkit-inner-spin-button,
+.aioa-panel .aioa-input-group .aioa-input::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.aioa-panel .aioa-input-addon {
+    display: inline-flex;
+    align-items: center;
+    padding: 0 12px;
+    font-weight: 500;
+    color: #fff;
+    background: #000;
+    border: 1px solid #000;
+    border-radius: 0 4px 4px 0;
+}
+
+/* ---------- radios (position / widget size) ---------- */
+.aioa-panel .aioa-three-col {
+    column-count: 3;
+    column-gap: 3rem;
+}
+
+.aioa-panel .aioa-three-col > * {
+    break-inside: avoid;
+}
+
+.aioa-panel .aioa-radio {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 0 0 10px;
+}
+
+.aioa-panel .aioa-radio input[type="radio"] {
+    width: 18px;
+    height: 18px;
+    margin: 0;
+    accent-color: var(--aioa-purple);
+    cursor: pointer;
+    position: static;
+    opacity: 1;
+}
+
+.aioa-panel .aioa-radio label {
+    margin: 0;
+    cursor: pointer;
+    font-weight: 400;
+    color: var(--aioa-text);
+}
+
+/* ---------- switches ---------- */
+.aioa-panel .aioa-switch {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    position: relative;
+    cursor: pointer;
+    margin: 0 0 12px;
+}
+
+.aioa-panel .aioa-switch-label {
+    font-size: 16px;
+    font-weight: 700;
+    color: #000;
+}
+
+.aioa-panel .aioa-switch-input {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    width: 70px;
+    height: 35px;
+    margin: 0;
+    transform: translateY(-50%);
+    opacity: 0;
+    cursor: pointer;
+    z-index: 2;
+}
+
+.aioa-panel .aioa-switch-body {
+    flex-shrink: 0;
+    width: 70px;
+    height: 35px;
+    border-radius: 25px;
+    background: #fff;
+    position: relative;
+    box-shadow: -1px 2px 6px #bbb;
+    transition: background .2s ease;
+}
+
+.aioa-panel .aioa-switch-body::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 6px;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: #a6a7a8;
+    transform: translateY(-50%);
+    transition: transform .2s ease, background .2s ease;
+}
+
+.aioa-panel .aioa-switch-input:checked + .aioa-switch-body::after {
+    transform: translate(33px, -50%);
+    background: var(--aioa-purple);
+}
+
+.aioa-panel .aioa-switch-input:focus-visible + .aioa-switch-body {
+    outline: 2px solid var(--aioa-purple-light);
+    outline-offset: 2px;
+}
+
+/* ---------- icon type / size cards ---------- */
+.aioa-panel .aioa-icon-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px;
+}
+
+.aioa-panel .aioa-icon-option {
+    position: relative;
+}
+
+.aioa-panel .aioa-icon-option input[type="radio"] {
+    position: absolute;
+    opacity: 0;
+    width: 1px;
+    height: 1px;
+    margin: 0;
+}
+
+.aioa-panel .aioa-icon-option label {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 130px;
+    height: 130px;
+    padding: 10px;
+    margin: 0;
+    background-color: var(--aioa-icon-bg);
+    outline: 4px solid #fff;
+    outline-offset: -4px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: outline-color .15s ease;
+}
+
+.aioa-panel .aioa-icon-option label img {
+    display: block;
+    max-width: 100%;
+}
+
+.aioa-panel .aioa-icon-option input[type="radio"]:checked + label {
+    outline-color: var(--aioa-selected);
+}
+
+.aioa-panel .aioa-icon-option input[type="radio"]:focus-visible + label {
+    box-shadow: 0 0 0 3px var(--aioa-purple-light);
+}
+
+.aioa-panel .aioa-icon-option input[type="radio"]:checked + label::before {
+    content: "";
+    position: absolute;
+    right: -4px;
+    top: -4px;
+    width: 20px;
+    height: 20px;
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 25 25'%3E%3Ccircle fill='%2343A047' cx='12.5' cy='12.5' r='12'/%3E%3Cpath fill='%23FFFFFF' d='M12.5,1C18.9,1,24,6.1,24,12.5S18.9,24,12.5,24S1,18.9,1,12.5S6.1,1,12.5,1 M12.5,0C5.6,0,0,5.6,0,12.5S5.6,25,12.5,25S25,19.4,25,12.5S19.4,0,12.5,0L12.5,0z'/%3E%3Cpolygon fill='%23FFFFFF' points='9.8,19.4 4.4,13.9 7.1,11.1 9.8,13.9 17.9,5.6 20.5,8.4'/%3E%3C/svg%3E") no-repeat center center / contain;
+}
+
+/* ---------- save button ---------- */
+.aioa-panel .aioa-actions {
+    text-align: center;
+    margin: 12px 0 16px;
+}
+
+.aioa-panel .aioa-save {
+    display: inline-block;
+    min-width: 160px;
+    padding: 10px 22px;
+    font-size: 14px;
+    font-weight: 700;
+    color: #fff;
+    background: var(--aioa-purple);
+    border: 2px solid var(--aioa-purple);
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background .15s ease, border-color .15s ease;
+}
+
+.aioa-panel .aioa-save:hover,
+.aioa-panel .aioa-save:focus {
+    background: var(--aioa-purple-dark);
+    border-color: var(--aioa-purple-dark);
+}
+
+.aioa-panel .aioa-save[disabled] {
+    opacity: .6;
+    cursor: wait;
+}
+
+@media (max-width: 640px) {
+    .aioa-panel .aioa-three-col {
+        column-count: 1;
+    }
+
+    .aioa-panel .aioa-bold-top {
+        flex-direction: column;
+    }
+
+    .aioa-panel .aioa-bold-btn {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .aioa-panel .aioa-bold-watermark {
+        display: none;
+    }
+}

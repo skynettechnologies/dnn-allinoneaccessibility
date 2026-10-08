@@ -1,0 +1,71 @@
+<dotnetnuke type="Package" version="5.0">
+  <packages>
+    <package name="SkynetTechnologies.AllInOneAccessibility" type="PersonaBar" version="01.00.00">
+      <friendlyName>All in One Accessibility&#174;</friendlyName>
+      <description>Website accessibility widget for improving WCAG 2.0, 2.1, 2.2 and ADA, EAA compliance!</description>
+      <iconFile>~/DesktopModules/Admin/Dnn.PersonaBar/Modules/AllInOneAccessibility/images/aioa-logo.png</iconFile>
+      <owner>
+        <name>Skynet Technologies USA LLC</name>
+        <organization>Skynet Technologies USA LLC</organization>
+        <url>https://www.skynettechnologies.com</url>
+        <email>hello@skynettechnologies.com</email>
+      </owner>
+      <license src="License.txt" />
+      <releaseNotes src="ReleaseNotes.txt" />
+      <azureCompatible>true</azureCompatible>
+      <dependencies>
+        <dependency type="CoreVersion">10.00.00</dependency>
+        <dependency type="ManagedPackage" version="01.00.00">Dnn.PersonaBar.UI</dependency>
+      </dependencies>
+      <components>
+        <component type="Assembly">
+          <assemblies>
+            <assembly>
+              <path>bin</path>
+              <name>SkynetTechnologies.AllInOneAccessibility.dll</name>
+              <version>01.00.00</version>
+            </assembly>
+          </assemblies>
+        </component>
+
+        <component type="ResourceFile">
+          <resourceFiles>
+            <basePath>DesktopModules/Admin/Dnn.PersonaBar/Modules/AllInOneAccessibility</basePath>
+            <resourceFile>
+              <name>Resources.zip</name>
+            </resourceFile>
+          </resourceFiles>
+        </component>
+
+        <component type="Script">
+          <scripts>
+            <basePath>DesktopModules/Admin/Dnn.PersonaBar/Modules/AllInOneAccessibility/Install</basePath>
+            <script type="Install">
+              <path>Install</path>
+              <name>01.00.00.SqlDataProvider</name>
+              <version>01.00.00</version>
+            </script>
+            <script type="UnInstall">
+              <path>Install</path>
+              <name>Uninstall.SqlDataProvider</name>
+              <version>01.00.00</version>
+            </script>
+          </scripts>
+        </component>
+
+        <component type="PersonaBarMenu">
+          <menu>
+            <identifier>AllInOneAccessibility</identifier>
+            <moduleName>AllInOneAccessibility</moduleName>
+            <resourceKey>nav_AllInOneAccessibility</resourceKey>
+            <path>AllInOneAccessibility</path>
+            <mobileSupport>true</mobileSupport>
+            <parent>Settings</parent>
+            <order>45</order>
+            <defaultPermissions>Administrators</defaultPermissions>
+          </menu>
+        </component>
+      </components>
+    </package>
+  </packages>
+</dotnetnuke>

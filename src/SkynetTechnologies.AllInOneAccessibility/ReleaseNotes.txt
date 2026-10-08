@@ -1,0 +1,7 @@
+<h3>All in One Accessibility&reg; for DNN - 1.0.0</h3>
+<ul>
+  <li>Adds the All in One Accessibility widget to every page of every site, at the end of the page body.</li>
+  <li>New Persona Bar page: Settings &gt; All in One Accessibility&reg; (colour, position, precise position, widget size, 29 icon types, icon size and custom icon size).</li>
+  <li>Automatically registers the website domain for the free widget the first time the settings page is opened.</li>
+  <li>No web.config changes. Uninstalling removes the widget, the menu item and the stored settings.</li>
+</ul>
